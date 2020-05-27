@@ -1,0 +1,5 @@
+.jshintrc
+dist/**/*
+node_modules
+*.lock
+
