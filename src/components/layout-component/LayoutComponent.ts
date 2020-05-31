@@ -1,29 +1,28 @@
-import HeaderComponent from '../header-component/HeaderComponent'
-import ContentComponent from '../content-component/ContentComponent'
-import FooterComponent from '../footer-component/FooterComponent'
-import Component from '../base-component/Component'
+import { LitElement, html, customElement } from 'lit-element'
+import '../header-component/HeaderComponent'
+import '../content-component/ContentComponent'
+import '../footer-component/FooterComponent'
 
-export default class LayoutComponent extends Component {
+@customElement('layout-component')
+export class LayoutComponent extends LitElement {
+	render() {
+		return html`
+			<section class="hero is-fullheight">
+				<div class="hero-head">
+					<header-component></header-component>
+				</div>
 
-    headerComponent: HeaderComponent
-    contentComponent: ContentComponent
-    footerComponent: FooterComponent
+				<div class="hero-body">
+					<content-component></content-component>
+				</div>
+				<div class="hero-foot">
+					<footer-component></footer-component>
+				</div>
+			</section>
+		`
+	}
 
-    static Html =
-        `<section class="hero is-fullheight" id="layout">
-        <div class="hero-head" id="layout-header">
-        </div>
-        <div class="hero-body" id="layout-content">
-        </div>
-        <div class="hero-foot" id="layout-footer">
-        </div>
-     </section>`
-
-    constructor(parentID: string) {
-        super(parentID, LayoutComponent.Html)
-        this.headerComponent = new HeaderComponent('#layout-header')
-        this.contentComponent = new ContentComponent('#layout-content')
-        this.footerComponent = new FooterComponent('#layout-footer')
-    }
-
+	createRenderRoot() {
+		return this
+	}
 }

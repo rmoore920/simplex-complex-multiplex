@@ -1,21 +1,23 @@
-import Component from '../base-component/Component'
+import { LitElement, html, customElement } from 'lit-element'
 
-export default class HeaderComponent extends Component {
-  static Logo = 'logo.png';
-  static Html = `
-		<header class="navbar is-tranparent is-fixed-top">
-			<div class="navbar-brand">
-				<a class="navbar-item">
-					<img 
-					src="logo.png">
-				<span style="padding-left:1rem" class="subtitle">
-					simplex:complex:multiplex
-				</span>
-				</a>
-			</header>`
+@customElement('header-component')
+export class HeaderComponent extends LitElement {
+	render() {
+		return html`
+			<header class="navbar is-tranparent is-fixed-top">
+				<div class="navbar-brand">
+					<a class="navbar-item">
+						<img src="logo.png" />
+						<span style="padding-left:1rem" class="subtitle">
+							simplex:complex:multiplex
+						</span>
+					</a>
+				</div>
+			</header>
+		`
+	}
 
-
-  constructor(parentID: string) {
-    super(parentID, HeaderComponent.Html)
-  }
+	createRenderRoot() {
+		return this
+	}
 }
