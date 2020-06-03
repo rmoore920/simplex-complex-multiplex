@@ -7,6 +7,10 @@ import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 import './components/router-component/RouterComponent'
 import './components/app-component/AppComponent'
+import Navigo from 'navigo'
+
+let router = new Navigo('/', true, '#!')
+router.on('/info', () => {}).resolve()
 
 // import LayoutComponent from './components/layout-component/LayoutComponent'
 // import RouterComponent from './components/router-component/RouterComponent'

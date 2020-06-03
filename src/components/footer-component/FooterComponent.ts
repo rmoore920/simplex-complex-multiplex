@@ -1,5 +1,4 @@
 import { LitElement, html, customElement } from 'lit-element'
-import '../app-component/AppLinkComponent'
 
 @customElement('footer-component')
 export class FooterComponent extends LitElement {
@@ -8,12 +7,12 @@ export class FooterComponent extends LitElement {
 			<nav class="tabs is-fullwidth">
 				<ul>
 					<li>
-						<app-link href="/info">
+						<a href="info" data-navigo>
 							<span class="icon">
 								<i class="fas fa-book-reader"></i>
 							</span>
 							Library
-						</app-link>
+						</a>
 					</li>
 					<li>
 						<a>

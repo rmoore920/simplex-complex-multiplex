@@ -1,5 +1,4 @@
 import { LitElement, html, customElement, property } from 'lit-element'
-import '../app-component/AppMainComponent'
 
 @customElement('content-component')
 export class ContentComponent extends LitElement {
@@ -38,12 +37,7 @@ export class ContentComponent extends LitElement {
 						</h1>
 					</div>
 					<div class="column">
-						<app-main active-route=${this.content}>
-							<div route="home">${this.quote}</div>
-							<h1 route="info">Info</h1>
-							<h1 route="user">User</h1>
-							<h1 route="not-found">Not Found</h1>
-						</app-main>
+						${this.quote}
 					</div>
 				</div>
 			</div>
