@@ -36,7 +36,7 @@ export class ContentComponent extends LitElement {
 							simplex:complex:multiplex
 						</h1>
 					</div>
-					<div class="column">
+					<div class="column" id="quote-content">
 						${this.quote}
 					</div>
 				</div>
